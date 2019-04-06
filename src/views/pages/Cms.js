@@ -319,6 +319,7 @@ export default class CmsPage extends React.Component {
 												value={this.state.data.heading3 || ''}
 												onChange={this.handleChange}
 											/>
+                                            <hr/>
 											<Label for="heading4">Padding Large</Label>
 											<img src="/images/eye.png" height="15px" />
 											<Input
@@ -346,6 +347,7 @@ export default class CmsPage extends React.Component {
 												value={this.state.data.heading6 || ''}
 												onChange={this.handleChange}
 											/>
+                                            <hr/>
 											<Label for="borderLarge">Border Large</Label>
 											<img src="/images/eye.png" height="15px" />
 											<Input
@@ -441,6 +443,7 @@ export default class CmsPage extends React.Component {
 												value={this.state.data.heading3FontFamily || ''}
 												onChange={this.handleChange}
 											/>
+                                            <hr/>
 											<Label for="heading1FontSize">Font Size Large</Label>
 											<Input
 												type="text"
@@ -465,6 +468,7 @@ export default class CmsPage extends React.Component {
 												value={this.state.data.heading3FontSize || ''}
 												onChange={this.handleChange}
 											/>
+                                            <hr/>
 											<Label for="textColor1">Color 1</Label>
 											<img
 												src="/images/color-wheel.png"
@@ -513,6 +517,7 @@ export default class CmsPage extends React.Component {
 												value={this.state.data.textColor3 || ''}
 												onChange={this.handleChange}
 											/>
+                                            <hr/>
 											<Label for="lineHeightLarge">Line Height Large</Label>
 											<Input
 												type="text"
@@ -537,6 +542,7 @@ export default class CmsPage extends React.Component {
 												value={this.state.data.lineHeightSmall || ''}
 												onChange={this.handleChange}
 											/>
+                                            <hr/>
 											<Label for="letterSpacingLarge">Letter Spacing Large</Label>
 											<Input
 												type="text"
