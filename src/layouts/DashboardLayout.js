@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { Button, Badge, NavItem, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
-import { Header, SidebarNav, Footer, PageContent, Avatar, Chat, PageAlert, Page } from '../vibe';
+import { Header, SidebarNav, Footer, PageContent, Avatar, PageAlert, Page } from '../vibe';
 import Logo from '../assets/images/vibe-logo.svg';
 import avatar1 from '../assets/images/avatar1.png';
 import nav from '../_nav';
@@ -16,7 +16,6 @@ export default class DashboardLayout extends Component {
     this.state = {
       sidebarCollapsed: false,
       isMobile: window.innerWidth <= MOBILE_SIZE,
-      showChat1: true,
     };
   }
 
@@ -46,9 +45,6 @@ export default class DashboardLayout extends Component {
     this.setState(prevState => ({ sidebarCollapsed: !prevState.sidebarCollapsed }));
   };
 
-  closeChat = () => {
-    this.setState({ showChat1: false });
-  };
 
   render() {
     const { sidebarCollapsed } = this.state;
@@ -97,11 +93,11 @@ export default class DashboardLayout extends Component {
               </span>
             </span>
           </Footer>
-          <Chat.Container>
+          {/* <Chat.Container>
             {this.state.showChat1 && (
               <Chat.ChatBox name="Messages" status="online" image={avatar1} close={this.closeChat} />
             )}
-          </Chat.Container>
+          </Chat.Container> */}
         </div>
       </ContextProviders>
     );
@@ -112,35 +108,25 @@ function HeaderNav() {
   return (
     <React.Fragment>
       <NavItem>
-        <form className="form-inline">
+        {/* <form className="form-inline">
           <input className="form-control mr-sm-1" type="search" placeholder="Search" aria-label="Search" />
           <Button type="submit" className="d-none d-sm-block">
             <i className="fa fa-search" />
           </Button>
-        </form>
+        </form> */}
       </NavItem>
       <UncontrolledDropdown nav inNavbar>
         <DropdownToggle nav caret>
           New
         </DropdownToggle>
         <DropdownMenu right>
-          <DropdownItem>Project</DropdownItem>
-          <DropdownItem>User</DropdownItem>
+          <DropdownItem>Exported JSON</DropdownItem>
+          <DropdownItem>CMS</DropdownItem>
           <DropdownItem divider />
           <DropdownItem>
-            Message <Badge color="primary">10</Badge>
+            Logout
+             {/* <Badge color="primary">10</Badge> */}
           </DropdownItem>
-        </DropdownMenu>
-      </UncontrolledDropdown>
-      <UncontrolledDropdown nav inNavbar>
-        <DropdownToggle nav>
-          <Avatar size="small" color="blue" initials="JS" />
-        </DropdownToggle>
-        <DropdownMenu right>
-          <DropdownItem>Option 1</DropdownItem>
-          <DropdownItem>Option 2</DropdownItem>
-          <DropdownItem divider />
-          <DropdownItem>Reset</DropdownItem>
         </DropdownMenu>
       </UncontrolledDropdown>
     </React.Fragment>
