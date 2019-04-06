@@ -25,14 +25,9 @@ export default class CmsPage extends React.Component {
 		viewColor3Picker: false,
 		viewColor4Picker: false,
 		viewColor5Picker: false,
-		viewHeading1Picker: false,
-		viewHeading2Picker: false,
-		viewHeading3Picker: false,
-		viewHeading4Picker: false,
-		viewHeading5Picker: false,
-		viewHeading6Picker: false,
-		viewParagraphPicker: false,
-		viewQuotePicker: false,
+		viewTextColor1Picker: false,
+		viewTextColor2Picker: false,
+		viewTextColor3Picker: false,
 		modal: false,
 		data: {}
 	};
@@ -44,14 +39,9 @@ export default class CmsPage extends React.Component {
 			viewColor3Picker: false,
 			viewColor4Picker: false,
 			viewColor5Picker: false,
-			viewHeading1Picker: false,
-			viewHeading2Picker: false,
-			viewHeading3Picker: false,
-			viewHeading4Picker: false,
-			viewHeading5Picker: false,
-			viewHeading6Picker: false,
-			viewParagraphPicker: false,
-			viewQuotePicker: false
+			viewTextColor1Picker: false,
+			viewTextColor2Picker: false,
+			viewTextColor3Picker: false,
 		});
 	};
 
@@ -163,111 +153,39 @@ export default class CmsPage extends React.Component {
 		});
 	};
 
-	handleHeading1FontColorChange = (color) => {
+	handleTextColor1Change = (color) => {
 		const formattedRGBA = `rgba(${color.rgb.r}, ${color.rgb.g}, ${color.rgb.b}, ${color.rgb.a})`;
 		const { data } = this.state;
 
-		data.heading1FontColor = formattedRGBA;
+		data.textColor1 = formattedRGBA;
 
 		this.setState({
 			data: data,
-			viewHeading1Picker: false
+			viewTextColor1Picker: false
 		});
 	};
 
-	handleHeading2FontColorChange = (color) => {
+	handleTextColor2Change = (color) => {
 		const formattedRGBA = `rgba(${color.rgb.r}, ${color.rgb.g}, ${color.rgb.b}, ${color.rgb.a})`;
 		const { data } = this.state;
 
-		data.heading2FontColor = formattedRGBA;
+		data.textColor2 = formattedRGBA;
 
 		this.setState({
 			data: data,
-			viewHeading2Picker: false
+			viewTextColor2Picker: false
 		});
 	};
 
-	handleHeading3FontColorChange = (color) => {
+	handleTextColor3Change = (color) => {
 		const formattedRGBA = `rgba(${color.rgb.r}, ${color.rgb.g}, ${color.rgb.b}, ${color.rgb.a})`;
 		const { data } = this.state;
 
-		data.heading3FontColor = formattedRGBA;
+		data.textColor3 = formattedRGBA;
 
 		this.setState({
 			data: data,
-			viewHeading3Picker: false
-		});
-	};
-
-	handleHeading4FontColorChange = (color) => {
-		const formattedRGBA = `rgba(${color.rgb.r}, ${color.rgb.g}, ${color.rgb.b}, ${color.rgb.a})`;
-		const { data } = this.state;
-
-		data.heading4FontColor = formattedRGBA;
-
-		this.setState({
-			data: data,
-			viewHeading4Picker: false
-		});
-	};
-
-	handleHeading5FontColorChange = (color) => {
-		const formattedRGBA = `rgba(${color.rgb.r}, ${color.rgb.g}, ${color.rgb.b}, ${color.rgb.a})`;
-		const { data } = this.state;
-
-		data.heading5FontColor = formattedRGBA;
-
-		this.setState({
-			data: data,
-			viewHeading5Picker: false
-		});
-	};
-
-	handleHeading6FontColorChange = (color) => {
-		const formattedRGBA = `rgba(${color.rgb.r}, ${color.rgb.g}, ${color.rgb.b}, ${color.rgb.a})`;
-		const { data } = this.state;
-
-		data.heading6FontColor = formattedRGBA;
-
-		this.setState({
-			data: data,
-			viewHeading6Picker: false
-		});
-	};
-
-	handleHeading6FontColorChange = (color) => {
-		const formattedRGBA = `rgba(${color.rgb.r}, ${color.rgb.g}, ${color.rgb.b}, ${color.rgb.a})`;
-		const { data } = this.state;
-
-		data.heading6FontColor = formattedRGBA;
-
-		this.setState({
-			data: data,
-			viewHeading6Picker: false
-		});
-	};
-
-	handleParagraphFontColorChange = (color) => {
-		const formattedRGBA = `rgba(${color.rgb.r}, ${color.rgb.g}, ${color.rgb.b}, ${color.rgb.a})`;
-		const { data } = this.state;
-
-		data.paragraphFontColor = formattedRGBA;
-
-		this.setState({
-			data: data,
-			viewParagraphPicker: false
-		});
-	};
-
-	handleQuoteFontColorChange = (color) => {
-		const formattedRGBA = `rgba(${color.rgb.r}, ${color.rgb.g}, ${color.rgb.b}, ${color.rgb.a})`;
-		const { data } = this.state;
-
-		data.quoteFontColor = formattedRGBA;
-
-		this.setState({
-			data: data,
-			viewQuotePicker: false
+			viewTextColor3Picker: false
 		});
 	};
 
@@ -499,10 +417,7 @@ export default class CmsPage extends React.Component {
 
 									{this.state.viewTypography && (
 										<FormGroup>
-											<h3 className="m-b sub-header">
-												<span>Heading 1</span> <img src="/images/eye.png" height="15px" />
-											</h3>
-											<Label for="heading1FontFamily">Font Family</Label>
+											<Label for="heading1FontFamily">Font Family 1</Label>
 											<Input
 												type="text"
 												name="text"
@@ -510,51 +425,7 @@ export default class CmsPage extends React.Component {
 												value={this.state.data.heading1FontFamily || ''}
 												onChange={this.handleChange}
 											/>
-											<Label for="heading1FontSize">Font Size</Label>
-											<Input
-												type="text"
-												name="text"
-												id="heading1FontSize"
-												value={this.state.data.heading1FontSize || ''}
-												onChange={this.handleChange}
-											/>
-											<Label for="heading1FontColor">Color</Label>
-											<img
-												src="/images/color-wheel.png"
-												height="20px"
-												onClick={() => this.showColorPicker('viewHeading1Picker')}
-											/>
-											{this.state.viewHeading1Picker && (
-												<SketchPicker onChangeComplete={this.handleHeading1FontColorChange} />
-											)}
-											<Input
-												type="text"
-												name="text"
-												id="heading1FontColor"
-												value={this.state.data.heading1FontColor || ''}
-												onChange={this.handleChange}
-											/>
-											<Label for="heading1LineHeight">Line Height</Label>
-											<Input
-												type="text"
-												name="text"
-												id="heading1LineHeight"
-												value={this.state.data.heading1LineHeight || ''}
-												onChange={this.handleChange}
-											/>
-											<Label for="heading1LetterSpacing">Letter Spacing</Label>
-											<Input
-												type="text"
-												name="text"
-												id="heading1LetterSpacing"
-												value={this.state.data.heading1LetterSpacing || ''}
-												onChange={this.handleChange}
-											/>
-
-											<h3 className="m-b sub-header">
-												<span>Heading 2</span> <img src="/images/eye.png" height="15px" />
-											</h3>
-											<Label for="heading2FontFamily">Font Family</Label>
+											<Label for="heading2FontFamily">Font Family 2</Label>
 											<Input
 												type="text"
 												name="text"
@@ -562,51 +433,7 @@ export default class CmsPage extends React.Component {
 												value={this.state.data.heading2FontFamily || ''}
 												onChange={this.handleChange}
 											/>
-											<Label for="heading2FontSize">Font Size</Label>
-											<Input
-												type="text"
-												name="text"
-												id="heading2FontSize"
-												value={this.state.data.heading2FontSize || ''}
-												onChange={this.handleChange}
-											/>
-											<Label for="heading2FontColor">Color</Label>
-											<img
-												src="/images/color-wheel.png"
-												height="20px"
-												onClick={() => this.showColorPicker('viewHeading2Picker')}
-											/>
-											{this.state.viewHeading2Picker && (
-												<SketchPicker onChangeComplete={this.handleHeading2FontColorChange} />
-											)}
-											<Input
-												type="text"
-												name="text"
-												id="heading2FontColor"
-												value={this.state.data.heading2FontColor || ''}
-												onChange={this.handleChange}
-											/>
-											<Label for="heading2LineHeight">Line Height</Label>
-											<Input
-												type="text"
-												name="text"
-												id="heading2LineHeight"
-												value={this.state.data.heading2LineHeight || ''}
-												onChange={this.handleChange}
-											/>
-											<Label for="heading2LetterSpacing">Letter Spacing</Label>
-											<Input
-												type="text"
-												name="text"
-												id="heading2LetterSpacing"
-												value={this.state.data.heading2LetterSpacing || ''}
-												onChange={this.handleChange}
-											/>
-
-											<h3 className="m-b sub-header">
-												<span>Heading 3</span> <img src="/images/eye.png" height="15px" />
-											</h3>
-											<Label for="heading3FontFamily">Font Family</Label>
+											<Label for="heading3FontFamily">Font Family 3</Label>
 											<Input
 												type="text"
 												name="text"
@@ -614,7 +441,23 @@ export default class CmsPage extends React.Component {
 												value={this.state.data.heading3FontFamily || ''}
 												onChange={this.handleChange}
 											/>
-											<Label for="heading3FontSize">Font Size</Label>
+											<Label for="heading1FontSize">Font Size Large</Label>
+											<Input
+												type="text"
+												name="text"
+												id="heading1FontSize"
+												value={this.state.data.heading1FontSize || ''}
+												onChange={this.handleChange}
+											/>
+											<Label for="heading2FontSize">Font Size Medium</Label>
+											<Input
+												type="text"
+												name="text"
+												id="heading2FontSize"
+												value={this.state.data.heading2FontSize || ''}
+												onChange={this.handleChange}
+											/>
+											<Label for="heading3FontSize">Font Size Small</Label>
 											<Input
 												type="text"
 												name="text"
@@ -622,296 +465,100 @@ export default class CmsPage extends React.Component {
 												value={this.state.data.heading3FontSize || ''}
 												onChange={this.handleChange}
 											/>
-											<Label for="heading3FontColor">Color</Label>
+											<Label for="textColor1">Color 1</Label>
 											<img
 												src="/images/color-wheel.png"
 												height="20px"
-												onClick={() => this.showColorPicker('viewHeading3Picker')}
+												onClick={() => this.showColorPicker('viewTextColor1Picker')}
 											/>
-											{this.state.viewHeading3Picker && (
-												<SketchPicker onChangeComplete={this.handleHeading3FontColorChange} />
+											{this.state.viewTextColor1Picker && (
+												<SketchPicker onChangeComplete={this.handleTextColor1Change} />
 											)}
 											<Input
 												type="text"
 												name="text"
-												id="heading3FontColor"
-												value={this.state.data.heading3FontColor || ''}
+												id="textColor1"
+												value={this.state.data.textColor1 || ''}
 												onChange={this.handleChange}
 											/>
-											<Label for="heading3LineHeight">Line Height</Label>
-											<Input
-												type="text"
-												name="text"
-												id="heading3LineHeight"
-												value={this.state.data.heading3LineHeight || ''}
-												onChange={this.handleChange}
-											/>
-											<Label for="heading3LetterSpacing">Letter Spacing</Label>
-											<Input
-												type="text"
-												name="text"
-												id="heading3LetterSpacing"
-												value={this.state.data.heading3LetterSpacing || ''}
-												onChange={this.handleChange}
-											/>
-
-											<h3 className="m-b sub-header">
-												<span>Heading 4</span> <img src="/images/eye.png" height="15px" />
-											</h3>
-											<Label for="heading4FontFamily">Font Family</Label>
-											<Input
-												type="text"
-												name="text"
-												id="heading4FontFamily"
-												value={this.state.data.heading4FontFamily || ''}
-												onChange={this.handleChange}
-											/>
-											<Label for="heading4FontSize">Font Size</Label>
-											<Input
-												type="text"
-												name="text"
-												id="heading4FontSize"
-												value={this.state.data.heading4FontSize || ''}
-												onChange={this.handleChange}
-											/>
-											<Label for="heading4FontColor">Color</Label>
+											<Label for="textColor2">Color 2</Label>
 											<img
 												src="/images/color-wheel.png"
 												height="20px"
-												onClick={() => this.showColorPicker('viewHeading4Picker')}
+												onClick={() => this.showColorPicker('viewTextColor2Picker')}
 											/>
-											{this.state.viewHeading4Picker && (
-												<SketchPicker onChangeComplete={this.handleHeading4FontColorChange} />
+											{this.state.viewTextColor2Picker && (
+												<SketchPicker onChangeComplete={this.handleTextColor2Change} />
 											)}
 											<Input
 												type="text"
 												name="text"
-												id="heading4FontColor"
-												value={this.state.data.heading4FontColor || ''}
+												id="textColor2"
+												value={this.state.data.textColor2 || ''}
 												onChange={this.handleChange}
 											/>
-											<Label for="heading4LineHeight">Line Height</Label>
-											<Input
-												type="text"
-												name="text"
-												id="heading4LineHeight"
-												value={this.state.data.heading4LineHeight || ''}
-												onChange={this.handleChange}
-											/>
-											<Label for="heading4LetterSpacing">Letter Spacing</Label>
-											<Input
-												type="text"
-												name="text"
-												id="heading4LetterSpacing"
-												value={this.state.data.heading4LetterSpacing || ''}
-												onChange={this.handleChange}
-											/>
-
-											<h3 className="m-b sub-header">
-												<span>Heading 5</span> <img src="/images/eye.png" height="15px" />
-											</h3>
-											<Label for="heading5FontFamily">Font Family</Label>
-											<Input
-												type="text"
-												name="text"
-												id="heading5FontFamily"
-												value={this.state.data.heading5FontFamily || ''}
-												onChange={this.handleChange}
-											/>
-											<Label for="heading5FontSize">Font Size</Label>
-											<Input
-												type="text"
-												name="text"
-												id="heading5FontSize"
-												value={this.state.data.heading5FontSize || ''}
-												onChange={this.handleChange}
-											/>
-											<Label for="heading5FontColor">Color</Label>
+											<Label for="textColor3">Color 3</Label>
 											<img
 												src="/images/color-wheel.png"
 												height="20px"
-												onClick={() => this.showColorPicker('viewHeading5Picker')}
+												onClick={() => this.showColorPicker('viewTextColor3Picker')}
 											/>
-											{this.state.viewHeading5Picker && (
-												<SketchPicker onChangeComplete={this.handleHeading5FontColorChange} />
+											{this.state.viewTextColor3Picker && (
+												<SketchPicker onChangeComplete={this.handleTextColor3Change} />
 											)}
 											<Input
 												type="text"
 												name="text"
-												id="heading5FontColor"
-												value={this.state.data.heading5FontColor || ''}
+												id="textColor3"
+												value={this.state.data.textColor3 || ''}
 												onChange={this.handleChange}
 											/>
-											<Label for="heading5LineHeight">Line Height</Label>
+											<Label for="lineHeightLarge">Line Height Large</Label>
 											<Input
 												type="text"
 												name="text"
-												id="heading5LineHeight"
-												value={this.state.data.heading5LineHeight || ''}
+												id="lineHeightLarge"
+												value={this.state.data.lineHeightLarge || ''}
 												onChange={this.handleChange}
 											/>
-											<Label for="heading5LetterSpacing">Letter Spacing</Label>
+											<Label for="lineHeightMedium">Line Height Medium</Label>
 											<Input
 												type="text"
 												name="text"
-												id="heading5LetterSpacing"
-												value={this.state.data.heading5LetterSpacing || ''}
+												id="lineHeightMedium"
+												value={this.state.data.lineHeightMedium || ''}
 												onChange={this.handleChange}
 											/>
-
-											<h3 className="m-b sub-header">
-												<span>Heading 6</span> <img src="/images/eye.png" height="15px" />
-											</h3>
-											<Label for="heading6FontFamily">Font Family</Label>
+											<Label for="lineHeightSmall">Line Height Small</Label>
 											<Input
 												type="text"
 												name="text"
-												id="heading6FontFamily"
-												value={this.state.data.heading6FontFamily || ''}
+												id="lineHeightSmall"
+												value={this.state.data.lineHeightSmall || ''}
 												onChange={this.handleChange}
 											/>
-											<Label for="heading6FontSize">Font Size</Label>
+											<Label for="letterSpacingLarge">Letter Spacing Large</Label>
 											<Input
 												type="text"
 												name="text"
-												id="heading6FontSize"
-												value={this.state.data.heading6FontSize || ''}
+												id="letterSpacingLarge"
+												value={this.state.data.letterSpacingLarge || ''}
 												onChange={this.handleChange}
 											/>
-											<Label for="heading6FontColor">Color</Label>
-											<img
-												src="/images/color-wheel.png"
-												height="20px"
-												onClick={() => this.showColorPicker('viewHeading6Picker')}
-											/>
-											{this.state.viewHeading6Picker && (
-												<SketchPicker onChangeComplete={this.handleHeading6FontColorChange} />
-											)}
+											<Label for="letterSpacingMedium">Letter Spacing Medium</Label>
 											<Input
 												type="text"
 												name="text"
-												id="heading6FontColor"
-												value={this.state.data.heading6FontColor || ''}
+												id="letterSpacingMedium"
+												value={this.state.data.letterSpacingMedium || ''}
 												onChange={this.handleChange}
 											/>
-											<Label for="heading6LineHeight">Line Height</Label>
+											<Label for="letterSpacingSmall">Letter Spacing Small</Label>
 											<Input
 												type="text"
 												name="text"
-												id="heading6LineHeight"
-												value={this.state.data.heading6LineHeight || ''}
-												onChange={this.handleChange}
-											/>
-											<Label for="heading6LetterSpacing">Letter Spacing</Label>
-											<Input
-												type="text"
-												name="text"
-												id="heading6LetterSpacing"
-												value={this.state.data.heading6LetterSpacing || ''}
-												onChange={this.handleChange}
-											/>
-
-											<h3 className="m-b sub-header">
-												<span>Paragraph</span> <img src="/images/eye.png" height="15px" />
-											</h3>
-											<Label for="paragraphFontFamily">Font Family</Label>
-											<Input
-												type="text"
-												name="text"
-												id="paragraphFontFamily"
-												value={this.state.data.paragraphFontFamily || ''}
-												onChange={this.handleChange}
-											/>
-											<Label for="paragraphFontSize">Font Size</Label>
-											<Input
-												type="text"
-												name="text"
-												id="paragraphFontSize"
-												value={this.state.data.paragraphFontSize || ''}
-												onChange={this.handleChange}
-											/>
-											<Label for="paragraphFontColor">Color</Label>
-											<img
-												src="/images/color-wheel.png"
-												height="20px"
-												onClick={() => this.showColorPicker('viewParagraphPicker')}
-											/>
-											{this.state.viewParagraphPicker && (
-												<SketchPicker onChangeComplete={this.handleParagraphFontColorChange} />
-											)}
-											<Input
-												type="text"
-												name="text"
-												id="paragraphFontColor"
-												value={this.state.data.paragraphFontColor || ''}
-												onChange={this.handleChange}
-											/>
-											<Label for="paragraphLineHeight">Line Height</Label>
-											<Input
-												type="text"
-												name="text"
-												id="paragraphLineHeight"
-												value={this.state.data.paragraphLineHeight || ''}
-												onChange={this.handleChange}
-											/>
-											<Label for="paragraphLetterSpacing">Letter Spacing</Label>
-											<Input
-												type="text"
-												name="text"
-												id="paragraphLetterSpacing"
-												value={this.state.data.paragraphLetterSpacing || ''}
-												onChange={this.handleChange}
-											/>
-
-											<h3 className="m-b sub-header">
-												<span>Quotes</span> <img src="/images/eye.png" height="15px" />
-											</h3>
-											<Label for="quoteFontFamily">Font Family</Label>
-											<Input
-												type="text"
-												name="text"
-												id="quoteFontFamily"
-												value={this.state.data.quoteFontFamily || ''}
-												onChange={this.handleChange}
-											/>
-											<Label for="quoteFontSize">Font Size</Label>
-											<Input
-												type="text"
-												name="text"
-												id="quoteFontSize"
-												value={this.state.data.quoteFontSize || ''}
-												onChange={this.handleChange}
-											/>
-											<Label for="quoteFontColor">Color</Label>
-											<img
-												src="/images/color-wheel.png"
-												height="20px"
-												onClick={() => this.showColorPicker('viewQuotePicker')}
-											/>
-											{this.state.viewQuotePicker && (
-												<SketchPicker onChangeComplete={this.handleQuoteFontColorChange} />
-											)}
-											<Input
-												type="text"
-												name="text"
-												id="quoteFontColor"
-												value={this.state.data.quoteFontColor || ''}
-												onChange={this.handleChange}
-											/>
-											<Label for="quoteFontLineHeight">Line Height</Label>
-											<Input
-												type="text"
-												name="text"
-												id="quoteFontLineHeight"
-												value={this.state.data.quoteFontLineHeight || ''}
-												onChange={this.handleChange}
-											/>
-											<Label for="quoteFontLetterSpacing">Letter Spacing</Label>
-											<Input
-												type="text"
-												name="text"
-												id="quoteFontLetterSpacing"
-												value={this.state.data.quoteFontLetterSpacing || ''}
+												id="letterSpacingSmall"
+												value={this.state.data.letterSpacingSmall || ''}
 												onChange={this.handleChange}
 											/>
 										</FormGroup>
