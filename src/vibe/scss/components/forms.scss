@@ -7,6 +7,14 @@ label {
     font-weight: 400;
 }
 
+.input-label-small {
+    display: block;
+}
+
+.input-label-small span {
+    margin-right: 10px;
+}
+
 .form-control {
     outline: none;
     line-height: 1.5em;
@@ -16,6 +24,12 @@ label {
     border: 1px solid $formColorBorderColor;
     box-shadow: inset 0 2px 0 0 #f2f5f8;
     border-radius: $formColorBorderRadius;
+}
+
+.small-input {
+    width: 20%;
+    display: inline;
+    margin-right: 10px;
 }
 
 //addons

@@ -41,3 +41,17 @@
 .modal-backdrop {
 	background-color: $modalOverlayBG;
 }
+
+.border-modal {
+	list-style-type: none;
+	padding: 0;
+}
+
+.border-modal li {
+	margin-bottom: 10px;
+}
+
+.border-modal span {
+	color: #7f8fa4;
+    font-weight: 400;
+}

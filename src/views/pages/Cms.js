@@ -28,10 +28,11 @@ export default class CmsPage extends React.Component {
 		viewTextColor1Picker: false,
 		viewTextColor2Picker: false,
 		viewTextColor3Picker: false,
-        modal: false,
-        previewBorder: '20px',
-        previewMargin: '20px',
-        previewPadding: '20px',
+		typographyModal: false,
+		spacingModal: false,
+		previewBorder: '20px',
+		previewMargin: '20px',
+		previewPadding: '20px',
 		data: {}
 	};
 
@@ -46,37 +47,43 @@ export default class CmsPage extends React.Component {
 			viewTextColor2Picker: false,
 			viewTextColor3Picker: false
 		});
-    };
-    
-    resetPreview = () => {
-        this.setState({
-            previewBorder: '20px',
-            previewMargin: '20px',
-            previewPadding: '20px'
-        })
-    }
+	};
 
-    setPreviewBorder = (target) => {
-        this.setState({
-            previewBorder: this.state.data[target]
-        })
-    }
-
-    setPreviewMargin = (target) => {
-        this.setState({
-            previewMargin: this.state.data[target]
-        })
-    }
-
-    setPreviewPadding = (target) => {
-        this.setState({
-            previewPadding: this.state.data[target]
-        })
-    }
-
-	toggle = () => {
+	resetPreview = () => {
 		this.setState({
-			modal: !this.state.modal
+			previewBorder: '20px',
+			previewMargin: '20px',
+			previewPadding: '20px'
+		});
+	};
+
+	setPreviewBorder = (target) => {
+		this.setState({
+			previewBorder: this.state.data[target]
+		});
+	};
+
+	setPreviewMargin = (target) => {
+		this.setState({
+			previewMargin: this.state.data[target]
+		});
+	};
+
+	setPreviewPadding = (target) => {
+		this.setState({
+			previewPadding: this.state.data[target]
+		});
+	};
+
+	toggleTypographyModal = () => {
+		this.setState({
+			typographyModal: !this.state.typographyModal
+		});
+	};
+
+	toggleSpacingModal = () => {
+		this.setState({
+			spacingModal: !this.state.spacingModal
 		});
 	};
 
@@ -219,9 +226,9 @@ export default class CmsPage extends React.Component {
 	};
 
 	render() {
-        const {previewBorder} = this.state
-        const {previewMargin} = this.state
-        const {previewPadding} = this.state
+		const { previewBorder } = this.state;
+		const { previewMargin } = this.state;
+		const { previewPadding } = this.state;
 
 		return (
 			<div>
@@ -323,10 +330,15 @@ export default class CmsPage extends React.Component {
 							<Card>
 								<CardBody>
 									<h3 className="m-b">Spacing</h3>
+
 									{this.state.viewSpacing && (
 										<FormGroup>
 											<Label for="marginLarge">Margin Large</Label>
-											<img src="/images/eye.png" height="15px" onClick={() => this.setPreviewMargin('marginLarge')}/>
+											<img
+												src="/images/eye.png"
+												height="15px"
+												onClick={() => this.setPreviewMargin('marginLarge')}
+											/>
 											<Input
 												type="text"
 												name="text"
@@ -335,7 +347,11 @@ export default class CmsPage extends React.Component {
 												onChange={this.handleChange}
 											/>
 											<Label for="marginMedium">Margin Medium</Label>
-											<img src="/images/eye.png" height="15px" onClick={() => this.setPreviewMargin('marginMedium')}/>
+											<img
+												src="/images/eye.png"
+												height="15px"
+												onClick={() => this.setPreviewMargin('marginMedium')}
+											/>
 											<Input
 												type="text"
 												name="text"
@@ -344,7 +360,11 @@ export default class CmsPage extends React.Component {
 												onChange={this.handleChange}
 											/>
 											<Label for="marginSmall">Margin Small</Label>
-											<img src="/images/eye.png" height="15px" onClick={() => this.setPreviewMargin('marginSmall')}/>
+											<img
+												src="/images/eye.png"
+												height="15px"
+												onClick={() => this.setPreviewMargin('marginSmall')}
+											/>
 											<Input
 												type="text"
 												name="text"
@@ -354,7 +374,11 @@ export default class CmsPage extends React.Component {
 											/>
 											<hr />
 											<Label for="paddingLarge">Padding Large</Label>
-											<img src="/images/eye.png" height="15px" onClick={() => this.setPreviewPadding('paddingLarge')}/>
+											<img
+												src="/images/eye.png"
+												height="15px"
+												onClick={() => this.setPreviewPadding('paddingLarge')}
+											/>
 											<Input
 												type="text"
 												name="text"
@@ -363,7 +387,11 @@ export default class CmsPage extends React.Component {
 												onChange={this.handleChange}
 											/>
 											<Label for="paddingMedium">Padding Medium</Label>
-											<img src="/images/eye.png" height="15px" onClick={() => this.setPreviewPadding('paddingMedium')}/>
+											<img
+												src="/images/eye.png"
+												height="15px"
+												onClick={() => this.setPreviewPadding('paddingMedium')}
+											/>
 											<Input
 												type="text"
 												name="text"
@@ -372,7 +400,11 @@ export default class CmsPage extends React.Component {
 												onChange={this.handleChange}
 											/>
 											<Label for="paddingSmall">Padding Small</Label>
-											<img src="/images/eye.png" height="15px" onClick={() => this.setPreviewPadding('paddingSmall')}/>
+											<img
+												src="/images/eye.png"
+												height="15px"
+												onClick={() => this.setPreviewPadding('paddingSmall')}
+											/>
 											<Input
 												type="text"
 												name="text"
@@ -381,31 +413,244 @@ export default class CmsPage extends React.Component {
 												onChange={this.handleChange}
 											/>
 											<hr />
-											<Label for="borderLarge">Border Large</Label>
-											<img src="/images/eye.png" height="15px" onClick={() => this.setPreviewBorder('borderLarge')}/>
+											<h3 className="m-b">
+												<Button color="primary" onClick={this.toggleSpacingModal}>
+													View Border Rules
+												</Button>
+												<Modal
+													isOpen={this.state.spacingModal}
+													toggle={this.toggleSpacingModal}
+												>
+													<ModalHeader toggle={this.toggleSpacingModal}>
+														Border Rules
+													</ModalHeader>
+													<ModalBody>
+														<h5>
+															The border property can have from one to four values style,
+															width and color. See examples below.
+														</h5>
+														<ul className="border-modal">
+															<li>
+																<span>dotted</span>
+																<div
+																	style={{
+																		border: '1px dotted black',
+																		width: '200px',
+																		height: '25px'
+																	}}
+																/>
+															</li>
+															<li>
+																<span>dashed</span>
+																<div
+																	style={{
+																		border: '1px dashed black',
+																		width: '200px',
+																		height: '25px'
+																	}}
+																/>
+															</li>
+															<li>
+																<span>solid</span>
+																<div
+																	style={{
+																		border: '1px solid black',
+																		width: '200px',
+																		height: '25px'
+																	}}
+																/>
+															</li>
+															<li>
+																<span>double</span>
+																<div
+																	style={{
+																		border: 'double',
+																		width: '200px',
+																		height: '25px'
+																	}}
+																/>
+															</li>
+															<li>
+																<span>groove</span>
+																<div
+																	style={{
+																		border: 'groove',
+																		width: '200px',
+																		height: '25px'
+																	}}
+																/>
+															</li>
+															<li>
+																<span>ridge</span>
+																<div
+																	style={{
+																		border: 'ridge',
+																		width: '200px',
+																		height: '25px'
+																	}}
+																/>
+															</li>
+															<li>
+																<span>inset</span>
+																<div
+																	style={{
+																		border: 'inset',
+																		width: '200px',
+																		height: '25px'
+																	}}
+																/>
+															</li>
+															<li>
+																<span>outset</span>
+																<div
+																	style={{
+																		border: 'outset',
+																		width: '200px',
+																		height: '25px'
+																	}}
+																/>
+															</li>
+														</ul>
+													</ModalBody>
+													<ModalFooter>
+														<Button color="secondary" onClick={this.toggleSpacingModal}>
+															Close
+														</Button>
+													</ModalFooter>
+												</Modal>
+											</h3>
+											<Label for="border1Width" className="input-label-small">
+												<span>Border Style 1</span>
+												<img
+													src="/images/eye.png"
+													height="15px"
+													onClick={() => this.setPreviewBorder('border1Width')}
+												/>
+											</Label>
 											<Input
+												className="small-input"
 												type="text"
 												name="text"
-												id="borderLarge"
-												value={this.state.data.borderLarge || ''}
+												id="border1Width"
+												placeholder="width"
+												value={this.state.data.border1Width || ''}
 												onChange={this.handleChange}
 											/>
-											<Label for="borderMedium"> Border Medium</Label>
-											<img src="/images/eye.png" height="15px" onClick={() => this.setPreviewBorder('borderMedium')}/>
 											<Input
+												className="small-input"
 												type="text"
 												name="text"
-												id="borderMedium"
-												value={this.state.data.borderMedium || ''}
+												id="border1Style"
+												placeholder="style"
+												value={this.state.data.border1Style || ''}
 												onChange={this.handleChange}
 											/>
-											<Label for="borderSmall">Border Small</Label>
-											<img src="/images/eye.png" height="15px" onClick={() => this.setPreviewBorder('borderSmall')}/>
 											<Input
+												className="small-input"
 												type="text"
 												name="text"
-												id="borderSmall"
-												value={this.state.data.borderSmall || ''}
+												id="border1Color"
+												placeholder="color"
+												value={this.state.data.border1Color || ''}
+												onChange={this.handleChange}
+											/>
+											<Input
+												className="small-input"
+												type="text"
+												name="text"
+												id="border1Radius"
+												placeholder="radius"
+												value={this.state.data.border1Radius || ''}
+												onChange={this.handleChange}
+											/>
+
+											<Label for="border2Width" className="input-label-small">
+												<span>Border Style 2</span>
+												<img
+													src="/images/eye.png"
+													height="15px"
+													onClick={() => this.setPreviewBorder('border2Width')}
+												/>
+											</Label>
+											<Input
+												className="small-input"
+												type="text"
+												name="text"
+												id="border2Width"
+												placeholder="width"
+												value={this.state.data.border2Width || ''}
+												onChange={this.handleChange}
+											/>
+											<Input
+												className="small-input"
+												type="text"
+												name="text"
+												id="border2Style"
+												placeholder="style"
+												value={this.state.data.border2Style || ''}
+												onChange={this.handleChange}
+											/>
+											<Input
+												className="small-input"
+												type="text"
+												name="text"
+												id="border2Color"
+												placeholder="color"
+												value={this.state.data.border2Color || ''}
+												onChange={this.handleChange}
+											/>
+											<Input
+												className="small-input"
+												type="text"
+												name="text"
+												id="border2Radius"
+												placeholder="radius"
+												value={this.state.data.border2Radius || ''}
+												onChange={this.handleChange}
+											/>
+
+											<Label for="border3Width" className="input-label-small">
+												<span>Border Style 3</span>
+												<img
+													src="/images/eye.png"
+													height="15px"
+													onClick={() => this.setPreviewBorder('border3Width')}
+												/>
+											</Label>
+											<Input
+												className="small-input"
+												type="text"
+												name="text"
+												id="border3Width"
+												placeholder="width"
+												value={this.state.data.border3Width || ''}
+												onChange={this.handleChange}
+											/>
+											<Input
+												className="small-input"
+												type="text"
+												name="text"
+												id="border3Style"
+												placeholder="style"
+												value={this.state.data.border3Style || ''}
+												onChange={this.handleChange}
+											/>
+											<Input
+												className="small-input"
+												type="text"
+												name="text"
+												id="border3Color"
+												placeholder="color"
+												value={this.state.data.border3Color || ''}
+												onChange={this.handleChange}
+											/>
+											<Input
+												className="small-input"
+												type="text"
+												name="text"
+												id="border3Radius"
+												placeholder="radius"
+												value={this.state.data.border3Radius || ''}
 												onChange={this.handleChange}
 											/>
 										</FormGroup>
@@ -420,11 +665,16 @@ export default class CmsPage extends React.Component {
 									<h3 className="m-b">
 										<span>Typography</span>
 
-										<Button color="primary" onClick={this.toggle}>
+										<Button color="primary" onClick={this.toggleTypographyModal}>
 											View Examples
 										</Button>
-										<Modal isOpen={this.state.modal} toggle={this.toggle}>
-											<ModalHeader toggle={this.toggle}>Typography Examples</ModalHeader>
+										<Modal
+											isOpen={this.state.typographyModal}
+											toggle={this.togtoggleTypographyModalgle}
+										>
+											<ModalHeader toggle={this.toggleTypographyModal}>
+												Typography Examples
+											</ModalHeader>
 											<ModalBody>
 												<h1>h1. Heading 1</h1>
 												<h2>h2. Heading 2</h2>
@@ -443,7 +693,7 @@ export default class CmsPage extends React.Component {
 												</small>
 											</ModalBody>
 											<ModalFooter>
-												<Button color="secondary" onClick={this.toggle}>
+												<Button color="secondary" onClick={this.toggleTypographyModal}>
 													Close
 												</Button>
 											</ModalFooter>
@@ -611,23 +861,26 @@ export default class CmsPage extends React.Component {
 						<Col md={4}>
 							<Card>
 								<CardBody>
-                                    <div className="preview">
-                                        <div className="preview-block-container">
-                                            <p>margin</p>
-                                            <h4>{previewMargin}</h4>
-                                            <div className="margin-preview-block" style={{margin: previewMargin}}>
-                                                <p>border</p>
-                                                <h4>{previewBorder}</h4>
-                                                <div className="padding-preview-block" style={{margin: previewBorder}}>
-                                                    <p>padding</p>
-                                                    <h4>{previewPadding}</h4>
-                                                    <div className="preview-block" style={{margin: previewPadding}}>
-                                                        <span>50 x 100</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+									<div className="preview">
+										<div className="preview-block-container">
+											<p>margin</p>
+											<h4>{previewMargin}</h4>
+											<div className="margin-preview-block" style={{ margin: previewMargin }}>
+												<p>border</p>
+												<h4>{previewBorder}</h4>
+												<div
+													className="padding-preview-block"
+													style={{ margin: previewBorder }}
+												>
+													<p>padding</p>
+													<h4>{previewPadding}</h4>
+													<div className="preview-block" style={{ margin: previewPadding }}>
+														<span>50 x 100</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
 									<hr />
 									<Button block color="primary" onClick={this.resetPreview}>
 										Reset Preview
