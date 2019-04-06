@@ -28,7 +28,10 @@ export default class CmsPage extends React.Component {
 		viewTextColor1Picker: false,
 		viewTextColor2Picker: false,
 		viewTextColor3Picker: false,
-		modal: false,
+        modal: false,
+        previewBorder: '20px',
+        previewMargin: '20px',
+        previewPadding: '20px',
 		data: {}
 	};
 
@@ -41,9 +44,35 @@ export default class CmsPage extends React.Component {
 			viewColor5Picker: false,
 			viewTextColor1Picker: false,
 			viewTextColor2Picker: false,
-			viewTextColor3Picker: false,
+			viewTextColor3Picker: false
 		});
-	};
+    };
+    
+    resetPreview = () => {
+        this.setState({
+            previewBorder: '20px',
+            previewMargin: '20px',
+            previewPadding: '20px'
+        })
+    }
+
+    setPreviewBorder = (target) => {
+        this.setState({
+            previewBorder: this.state.data[target]
+        })
+    }
+
+    setPreviewMargin = (target) => {
+        this.setState({
+            previewMargin: this.state.data[target]
+        })
+    }
+
+    setPreviewPadding = (target) => {
+        this.setState({
+            previewPadding: this.state.data[target]
+        })
+    }
 
 	toggle = () => {
 		this.setState({
@@ -190,6 +219,10 @@ export default class CmsPage extends React.Component {
 	};
 
 	render() {
+        const {previewBorder} = this.state
+        const {previewMargin} = this.state
+        const {previewPadding} = this.state
+
 		return (
 			<div>
 				<form onSubmit={this.handleSubmit}>
@@ -292,64 +325,64 @@ export default class CmsPage extends React.Component {
 									<h3 className="m-b">Spacing</h3>
 									{this.state.viewSpacing && (
 										<FormGroup>
-											<Label for="heading1">Margin Large</Label>
-											<img src="/images/eye.png" height="15px" />
+											<Label for="marginLarge">Margin Large</Label>
+											<img src="/images/eye.png" height="15px" onClick={() => this.setPreviewMargin('marginLarge')}/>
 											<Input
 												type="text"
 												name="text"
-												id="heading1"
-												value={this.state.data.heading1 || ''}
+												id="marginLarge"
+												value={this.state.data.marginLarge || ''}
 												onChange={this.handleChange}
 											/>
-											<Label for="heading2">Margin Medium</Label>
-											<img src="/images/eye.png" height="15px" />
+											<Label for="marginMedium">Margin Medium</Label>
+											<img src="/images/eye.png" height="15px" onClick={() => this.setPreviewMargin('marginMedium')}/>
 											<Input
 												type="text"
 												name="text"
-												id="heading2"
-												value={this.state.data.heading2 || ''}
+												id="marginMedium"
+												value={this.state.data.marginMedium || ''}
 												onChange={this.handleChange}
 											/>
-											<Label for="heading3">Margin Small</Label>
-											<img src="/images/eye.png" height="15px" />
+											<Label for="marginSmall">Margin Small</Label>
+											<img src="/images/eye.png" height="15px" onClick={() => this.setPreviewMargin('marginSmall')}/>
 											<Input
 												type="text"
 												name="text"
-												id="heading3"
-												value={this.state.data.heading3 || ''}
+												id="marginSmall"
+												value={this.state.data.marginSmall || ''}
 												onChange={this.handleChange}
 											/>
-                                            <hr/>
-											<Label for="heading4">Padding Large</Label>
-											<img src="/images/eye.png" height="15px" />
+											<hr />
+											<Label for="paddingLarge">Padding Large</Label>
+											<img src="/images/eye.png" height="15px" onClick={() => this.setPreviewPadding('paddingLarge')}/>
 											<Input
 												type="text"
 												name="text"
-												id="heading4"
-												value={this.state.data.heading4 || ''}
+												id="paddingLarge"
+												value={this.state.data.paddingLarge || ''}
 												onChange={this.handleChange}
 											/>
-											<Label for="heading5">Padding Medium</Label>
-											<img src="/images/eye.png" height="15px" />
+											<Label for="paddingMedium">Padding Medium</Label>
+											<img src="/images/eye.png" height="15px" onClick={() => this.setPreviewPadding('paddingMedium')}/>
 											<Input
 												type="text"
 												name="text"
-												id="heading5"
-												value={this.state.data.heading5 || ''}
+												id="paddingMedium"
+												value={this.state.data.paddingMedium || ''}
 												onChange={this.handleChange}
 											/>
-											<Label for="heading6">Padding Small</Label>
-											<img src="/images/eye.png" height="15px" />
+											<Label for="paddingSmall">Padding Small</Label>
+											<img src="/images/eye.png" height="15px" onClick={() => this.setPreviewPadding('paddingSmall')}/>
 											<Input
 												type="text"
 												name="text"
-												id="heading6"
-												value={this.state.data.heading6 || ''}
+												id="paddingSmall"
+												value={this.state.data.paddingSmall || ''}
 												onChange={this.handleChange}
 											/>
-                                            <hr/>
+											<hr />
 											<Label for="borderLarge">Border Large</Label>
-											<img src="/images/eye.png" height="15px" />
+											<img src="/images/eye.png" height="15px" onClick={() => this.setPreviewBorder('borderLarge')}/>
 											<Input
 												type="text"
 												name="text"
@@ -358,7 +391,7 @@ export default class CmsPage extends React.Component {
 												onChange={this.handleChange}
 											/>
 											<Label for="borderMedium"> Border Medium</Label>
-											<img src="/images/eye.png" height="15px" />
+											<img src="/images/eye.png" height="15px" onClick={() => this.setPreviewBorder('borderMedium')}/>
 											<Input
 												type="text"
 												name="text"
@@ -367,7 +400,7 @@ export default class CmsPage extends React.Component {
 												onChange={this.handleChange}
 											/>
 											<Label for="borderSmall">Border Small</Label>
-											<img src="/images/eye.png" height="15px" />
+											<img src="/images/eye.png" height="15px" onClick={() => this.setPreviewBorder('borderSmall')}/>
 											<Input
 												type="text"
 												name="text"
@@ -443,7 +476,7 @@ export default class CmsPage extends React.Component {
 												value={this.state.data.heading3FontFamily || ''}
 												onChange={this.handleChange}
 											/>
-                                            <hr/>
+											<hr />
 											<Label for="heading1FontSize">Font Size Large</Label>
 											<Input
 												type="text"
@@ -468,7 +501,7 @@ export default class CmsPage extends React.Component {
 												value={this.state.data.heading3FontSize || ''}
 												onChange={this.handleChange}
 											/>
-                                            <hr/>
+											<hr />
 											<Label for="textColor1">Color 1</Label>
 											<img
 												src="/images/color-wheel.png"
@@ -517,7 +550,7 @@ export default class CmsPage extends React.Component {
 												value={this.state.data.textColor3 || ''}
 												onChange={this.handleChange}
 											/>
-                                            <hr/>
+											<hr />
 											<Label for="lineHeightLarge">Line Height Large</Label>
 											<Input
 												type="text"
@@ -542,7 +575,7 @@ export default class CmsPage extends React.Component {
 												value={this.state.data.lineHeightSmall || ''}
 												onChange={this.handleChange}
 											/>
-                                            <hr/>
+											<hr />
 											<Label for="letterSpacingLarge">Letter Spacing Large</Label>
 											<Input
 												type="text"
@@ -578,9 +611,25 @@ export default class CmsPage extends React.Component {
 						<Col md={4}>
 							<Card>
 								<CardBody>
-									<div className="preview-block">{/* preview here */}</div>
+                                    <div className="preview">
+                                        <div className="preview-block-container">
+                                            <p>margin</p>
+                                            <h4>{previewMargin}</h4>
+                                            <div className="margin-preview-block" style={{margin: previewMargin}}>
+                                                <p>border</p>
+                                                <h4>{previewBorder}</h4>
+                                                <div className="padding-preview-block" style={{margin: previewBorder}}>
+                                                    <p>padding</p>
+                                                    <h4>{previewPadding}</h4>
+                                                    <div className="preview-block" style={{margin: previewPadding}}>
+                                                        <span>50 x 100</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 									<hr />
-									<Button block color="primary">
+									<Button block color="primary" onClick={this.resetPreview}>
 										Reset Preview
 									</Button>
 								</CardBody>
