@@ -427,88 +427,38 @@ export default class CmsPage extends React.Component {
 													<ModalBody>
 														<h5>
 															The border property can have from one to four values style,
-															width and color. See examples below.
+															width, color and radius. See examples below.
 														</h5>
 														<ul className="border-modal">
 															<li>
 																<span>dotted</span>
 																<div
 																	style={{
-																		border: '1px dotted black',
+																		border: '1px dashed red',
+																		borderRadius: '5px',
 																		width: '200px',
 																		height: '25px'
 																	}}
 																/>
-															</li>
-															<li>
-																<span>dashed</span>
-																<div
-																	style={{
-																		border: '1px dashed black',
-																		width: '200px',
-																		height: '25px'
-																	}}
-																/>
+																<h5>Code:</h5>
+																<h6>border-width: 1px</h6>
+																<h6>border-style: dashed</h6>
+																<h6>border-color: black</h6>
+																<h6>border-radius: 5px</h6>
 															</li>
 															<li>
 																<span>solid</span>
 																<div
 																	style={{
-																		border: '1px solid black',
+																		border: '3px solid black',
 																		width: '200px',
 																		height: '25px'
 																	}}
 																/>
-															</li>
-															<li>
-																<span>double</span>
-																<div
-																	style={{
-																		border: 'double',
-																		width: '200px',
-																		height: '25px'
-																	}}
-																/>
-															</li>
-															<li>
-																<span>groove</span>
-																<div
-																	style={{
-																		border: 'groove',
-																		width: '200px',
-																		height: '25px'
-																	}}
-																/>
-															</li>
-															<li>
-																<span>ridge</span>
-																<div
-																	style={{
-																		border: 'ridge',
-																		width: '200px',
-																		height: '25px'
-																	}}
-																/>
-															</li>
-															<li>
-																<span>inset</span>
-																<div
-																	style={{
-																		border: 'inset',
-																		width: '200px',
-																		height: '25px'
-																	}}
-																/>
-															</li>
-															<li>
-																<span>outset</span>
-																<div
-																	style={{
-																		border: 'outset',
-																		width: '200px',
-																		height: '25px'
-																	}}
-																/>
+																<h5>Code:</h5>
+																<h6>border-width: 3px</h6>
+																<h6>border-style: solid</h6>
+																<h6>border-color: black</h6>
 															</li>
 														</ul>
 													</ModalBody>
