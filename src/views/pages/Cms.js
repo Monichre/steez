@@ -103,6 +103,174 @@ export default class CmsPage extends React.Component {
 		console.log(this.state.data);
 	};
 
+	handlePrimaryColor1Change = (color) => {
+		const formattedRGBA = `rgba(${color.rgb.r}, ${color.rgb.g}, ${color.rgb.b}, ${color.rgb.a})`;
+		const { data } = this.state;
+
+		data.primaryColor1 = formattedRGBA;
+
+		this.setState({
+			data: data,
+			viewColor1Picker: false
+		});
+	};
+
+	handlePrimaryColor2Change = (color) => {
+		const formattedRGBA = `rgba(${color.rgb.r}, ${color.rgb.g}, ${color.rgb.b}, ${color.rgb.a})`;
+		const { data } = this.state;
+
+		data.primaryColor2 = formattedRGBA;
+
+		this.setState({
+			data: data,
+			viewColor2Picker: false
+		});
+	};
+
+	handlePrimaryColor3Change = (color) => {
+		const formattedRGBA = `rgba(${color.rgb.r}, ${color.rgb.g}, ${color.rgb.b}, ${color.rgb.a})`;
+		const { data } = this.state;
+
+		data.primaryColor3 = formattedRGBA;
+
+		this.setState({
+			data: data,
+			viewColor3Picker: false
+		});
+	};
+
+	handlePrimaryColor4Change = (color) => {
+		const formattedRGBA = `rgba(${color.rgb.r}, ${color.rgb.g}, ${color.rgb.b}, ${color.rgb.a})`;
+		const { data } = this.state;
+
+		data.primaryColor4 = formattedRGBA;
+
+		this.setState({
+			data: data,
+			viewColor4Picker: false
+		});
+	};
+
+	handlePrimaryColor5Change = (color) => {
+		const formattedRGBA = `rgba(${color.rgb.r}, ${color.rgb.g}, ${color.rgb.b}, ${color.rgb.a})`;
+		const { data } = this.state;
+
+		data.primaryColor5 = formattedRGBA;
+
+		this.setState({
+			data: data,
+			viewColor5Picker: false
+		});
+	};
+
+	handleHeading1FontColorChange = (color) => {
+		const formattedRGBA = `rgba(${color.rgb.r}, ${color.rgb.g}, ${color.rgb.b}, ${color.rgb.a})`;
+		const { data } = this.state;
+
+		data.heading1FontColor = formattedRGBA;
+
+		this.setState({
+			data: data,
+			viewHeading1Picker: false
+		});
+	};
+
+	handleHeading2FontColorChange = (color) => {
+		const formattedRGBA = `rgba(${color.rgb.r}, ${color.rgb.g}, ${color.rgb.b}, ${color.rgb.a})`;
+		const { data } = this.state;
+
+		data.heading2FontColor = formattedRGBA;
+
+		this.setState({
+			data: data,
+			viewHeading2Picker: false
+		});
+	};
+
+	handleHeading3FontColorChange = (color) => {
+		const formattedRGBA = `rgba(${color.rgb.r}, ${color.rgb.g}, ${color.rgb.b}, ${color.rgb.a})`;
+		const { data } = this.state;
+
+		data.heading3FontColor = formattedRGBA;
+
+		this.setState({
+			data: data,
+			viewHeading3Picker: false
+		});
+	};
+
+	handleHeading4FontColorChange = (color) => {
+		const formattedRGBA = `rgba(${color.rgb.r}, ${color.rgb.g}, ${color.rgb.b}, ${color.rgb.a})`;
+		const { data } = this.state;
+
+		data.heading4FontColor = formattedRGBA;
+
+		this.setState({
+			data: data,
+			viewHeading4Picker: false
+		});
+	};
+
+	handleHeading5FontColorChange = (color) => {
+		const formattedRGBA = `rgba(${color.rgb.r}, ${color.rgb.g}, ${color.rgb.b}, ${color.rgb.a})`;
+		const { data } = this.state;
+
+		data.heading5FontColor = formattedRGBA;
+
+		this.setState({
+			data: data,
+			viewHeading5Picker: false
+		});
+	};
+
+	handleHeading6FontColorChange = (color) => {
+		const formattedRGBA = `rgba(${color.rgb.r}, ${color.rgb.g}, ${color.rgb.b}, ${color.rgb.a})`;
+		const { data } = this.state;
+
+		data.heading6FontColor = formattedRGBA;
+
+		this.setState({
+			data: data,
+			viewHeading6Picker: false
+		});
+	};
+
+	handleHeading6FontColorChange = (color) => {
+		const formattedRGBA = `rgba(${color.rgb.r}, ${color.rgb.g}, ${color.rgb.b}, ${color.rgb.a})`;
+		const { data } = this.state;
+
+		data.heading6FontColor = formattedRGBA;
+
+		this.setState({
+			data: data,
+			viewHeading6Picker: false
+		});
+	};
+
+	handleParagraphFontColorChange = (color) => {
+		const formattedRGBA = `rgba(${color.rgb.r}, ${color.rgb.g}, ${color.rgb.b}, ${color.rgb.a})`;
+		const { data } = this.state;
+
+		data.paragraphFontColor = formattedRGBA;
+
+		this.setState({
+			data: data,
+			viewParagraphPicker: false
+		});
+	};
+
+	handleQuoteFontColorChange = (color) => {
+		const formattedRGBA = `rgba(${color.rgb.r}, ${color.rgb.g}, ${color.rgb.b}, ${color.rgb.a})`;
+		const { data } = this.state;
+
+		data.quoteFontColor = formattedRGBA;
+
+		this.setState({
+			data: data,
+			viewQuotePicker: false
+		});
+	};
+
 	render() {
 		return (
 			<div>
@@ -120,7 +288,9 @@ export default class CmsPage extends React.Component {
 												height="20px"
 												onClick={() => this.showColorPicker('viewColor1Picker')}
 											/>
-											{this.state.viewColor1Picker && <SketchPicker />}
+											{this.state.viewColor1Picker && (
+												<SketchPicker onChangeComplete={this.handlePrimaryColor1Change} />
+											)}
 											<Input
 												type="text"
 												name="text"
@@ -134,7 +304,9 @@ export default class CmsPage extends React.Component {
 												height="20px"
 												onClick={() => this.showColorPicker('viewColor2Picker')}
 											/>
-											{this.state.viewColor2Picker && <SketchPicker />}
+											{this.state.viewColor2Picker && (
+												<SketchPicker onChangeComplete={this.handlePrimaryColor2Change} />
+											)}
 											<Input
 												type="text"
 												name="text"
@@ -148,7 +320,9 @@ export default class CmsPage extends React.Component {
 												height="20px"
 												onClick={() => this.showColorPicker('viewColor3Picker')}
 											/>
-											{this.state.viewColor3Picker && <SketchPicker />}
+											{this.state.viewColor3Picker && (
+												<SketchPicker onChangeComplete={this.handlePrimaryColor3Change} />
+											)}
 											<Input
 												type="text"
 												name="text"
@@ -162,7 +336,9 @@ export default class CmsPage extends React.Component {
 												height="20px"
 												onClick={() => this.showColorPicker('viewColor4Picker')}
 											/>
-											{this.state.viewColor4Picker && <SketchPicker />}
+											{this.state.viewColor4Picker && (
+												<SketchPicker onChangeComplete={this.handlePrimaryColor4Change} />
+											)}
 											<Input
 												type="text"
 												name="text"
@@ -176,7 +352,9 @@ export default class CmsPage extends React.Component {
 												height="20px"
 												onClick={() => this.showColorPicker('viewColor5Picker')}
 											/>
-											{this.state.viewColor5Picker && <SketchPicker />}
+											{this.state.viewColor5Picker && (
+												<SketchPicker onChangeComplete={this.handlePrimaryColor5Change} />
+											)}
 											<Input
 												type="text"
 												name="text"
@@ -290,7 +468,7 @@ export default class CmsPage extends React.Component {
 										<span>Typography</span>
 
 										<Button color="primary" onClick={this.toggle}>
-											Typography Examples
+											View Examples
 										</Button>
 										<Modal isOpen={this.state.modal} toggle={this.toggle}>
 											<ModalHeader toggle={this.toggle}>Typography Examples</ModalHeader>
@@ -346,7 +524,9 @@ export default class CmsPage extends React.Component {
 												height="20px"
 												onClick={() => this.showColorPicker('viewHeading1Picker')}
 											/>
-											{this.state.viewHeading1Picker && <SketchPicker />}
+											{this.state.viewHeading1Picker && (
+												<SketchPicker onChangeComplete={this.handleHeading1FontColorChange} />
+											)}
 											<Input
 												type="text"
 												name="text"
@@ -396,7 +576,9 @@ export default class CmsPage extends React.Component {
 												height="20px"
 												onClick={() => this.showColorPicker('viewHeading2Picker')}
 											/>
-											{this.state.viewHeading2Picker && <SketchPicker />}
+											{this.state.viewHeading2Picker && (
+												<SketchPicker onChangeComplete={this.handleHeading2FontColorChange} />
+											)}
 											<Input
 												type="text"
 												name="text"
@@ -446,7 +628,9 @@ export default class CmsPage extends React.Component {
 												height="20px"
 												onClick={() => this.showColorPicker('viewHeading3Picker')}
 											/>
-											{this.state.viewHeading3Picker && <SketchPicker />}
+											{this.state.viewHeading3Picker && (
+												<SketchPicker onChangeComplete={this.handleHeading3FontColorChange} />
+											)}
 											<Input
 												type="text"
 												name="text"
@@ -496,7 +680,9 @@ export default class CmsPage extends React.Component {
 												height="20px"
 												onClick={() => this.showColorPicker('viewHeading4Picker')}
 											/>
-											{this.state.viewHeading4Picker && <SketchPicker />}
+											{this.state.viewHeading4Picker && (
+												<SketchPicker onChangeComplete={this.handleHeading4FontColorChange} />
+											)}
 											<Input
 												type="text"
 												name="text"
@@ -546,7 +732,9 @@ export default class CmsPage extends React.Component {
 												height="20px"
 												onClick={() => this.showColorPicker('viewHeading5Picker')}
 											/>
-											{this.state.viewHeading5Picker && <SketchPicker />}
+											{this.state.viewHeading5Picker && (
+												<SketchPicker onChangeComplete={this.handleHeading5FontColorChange} />
+											)}
 											<Input
 												type="text"
 												name="text"
@@ -596,7 +784,9 @@ export default class CmsPage extends React.Component {
 												height="20px"
 												onClick={() => this.showColorPicker('viewHeading6Picker')}
 											/>
-											{this.state.viewHeading6Picker && <SketchPicker />}
+											{this.state.viewHeading6Picker && (
+												<SketchPicker onChangeComplete={this.handleHeading6FontColorChange} />
+											)}
 											<Input
 												type="text"
 												name="text"
@@ -646,7 +836,9 @@ export default class CmsPage extends React.Component {
 												height="20px"
 												onClick={() => this.showColorPicker('viewParagraphPicker')}
 											/>
-											{this.state.viewParagraphPicker && <SketchPicker />}
+											{this.state.viewParagraphPicker && (
+												<SketchPicker onChangeComplete={this.handleParagraphFontColorChange} />
+											)}
 											<Input
 												type="text"
 												name="text"
@@ -696,7 +888,9 @@ export default class CmsPage extends React.Component {
 												height="20px"
 												onClick={() => this.showColorPicker('viewQuotePicker')}
 											/>
-											{this.state.viewQuotePicker && <SketchPicker />}
+											{this.state.viewQuotePicker && (
+												<SketchPicker onChangeComplete={this.handleQuoteFontColorChange} />
+											)}
 											<Input
 												type="text"
 												name="text"
