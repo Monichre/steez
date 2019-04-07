@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
+import * as Feather from 'react-feather';
 import {
   Button,
   Badge,
@@ -18,11 +20,12 @@ import {
   PageAlert,
   Page
 } from '../vibe'
-import Logo from '../images/logo-img-word.png'
+
 import nav from '../_nav'
 import routes from '../views'
 import ContextProviders from '../vibe/components/utilities/ContextProviders'
 
+const Logo = '/images/logo-img-word.png'
 const MOBILE_SIZE = 992
 
 export default class DashboardLayout extends Component {
@@ -68,6 +71,7 @@ export default class DashboardLayout extends Component {
   render () {
     const { sidebarCollapsed } = this.state
     const sidebarCollapsedClass = sidebarCollapsed ? 'side-menu-collapsed' : ''
+    console.log(Feather)
     return (
       <ContextProviders>
         <div className={`app ${sidebarCollapsedClass}`}>
@@ -105,16 +109,7 @@ export default class DashboardLayout extends Component {
             </Page>
           </div>
           <Footer>
-            <span>Copyright © 2019 Nice Dash. All rights reserved.</span>
-            <span>
-              <a href='#!'>Terms</a> | <a href='#!'>Privacy Policy</a>
-            </span>
-            <span className='ml-auto hidden-xs'>
-              Made with{' '}
-              <span role='img' aria-label='taco'>
-                🌮
-              </span>
-            </span>
+      
           </Footer>
           {/* <Chat.Container>
             {this.state.showChat1 && (
@@ -131,24 +126,18 @@ function HeaderNav () {
   return (
     <React.Fragment>
       <NavItem>
-        {/* <form className="form-inline">
-          <input className="form-control mr-sm-1" type="search" placeholder="Search" aria-label="Search" />
-          <Button type="submit" className="d-none d-sm-block">
-            <i className="fa fa-search" />
-          </Button>
-        </form> */}
+          
+              <NavLink to={'/apps/cms'}>
+                <Button>Create New Project</Button>
+              </NavLink>
       </NavItem>
       <UncontrolledDropdown nav inNavbar>
-        <DropdownToggle nav caret>
-          New
+        <DropdownToggle nav>
+          <Feather.Menu />
         </DropdownToggle>
         <DropdownMenu right>
-          <DropdownItem>Exported JSON</DropdownItem>
-          <DropdownItem>CMS</DropdownItem>
-          <DropdownItem divider />
           <DropdownItem>
-            Logout
-            {/* <Badge color="primary">10</Badge> */}
+          <Feather.LogOut />  Logout
           </DropdownItem>
         </DropdownMenu>
       </UncontrolledDropdown>

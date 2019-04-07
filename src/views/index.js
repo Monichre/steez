@@ -20,6 +20,7 @@ import Feed from './pages/Feed';
 import Modals from './elements/Modals';
 import ProgressBars from './elements/ProgressBars';
 import PaginationPage from './elements/Pagination';
+import CreateStyleGuideWithEditor from './pages/CreateStyleGuideWithEditor'
 import ErrorPage from './pages/404';
 
 const pageList = [
@@ -27,6 +28,11 @@ const pageList = [
     name: 'Dashboard',
     path: '/home',
     component: Dashboard
+  },
+   {
+    name: 'CreateStyleGuideWithEditor',
+    path: '/apps/editor',
+    component: CreateStyleGuideWithEditor
   },
   {
     name: 'Buttons',

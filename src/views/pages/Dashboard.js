@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import reactFeature from '../../assets/images/react-feature.svg'
-import { NavLink } from 'react-router-dom'
-
 import { Card, CardBody, Row, Col, Button } from 'reactstrap'
 
 class Dashboard extends Component {
@@ -31,16 +29,10 @@ class Dashboard extends Component {
               <h1>Projects</h1>
             </div>
           </Col>
-          <Col md={6}>
-            <div className='home-hero' style={heroStyles}>
-              <NavLink to={'/apps/cms'}>
-                <Button>Create New Project</Button>
-              </NavLink>
-            </div>
-          </Col>
+      
         </Row>
         <Row>
-          <Col md={6}>
+          <Col md={8}>
             <Card>
               <CardBody className='display-flex'>
                 <img

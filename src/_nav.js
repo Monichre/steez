@@ -5,107 +5,23 @@ export default {
       url: '/home',
       icon: 'Home'
     },
-    // {
-    //   name: 'UI Elements',
-    //   icon: 'Layers',
-    //   children: [
-    //     // {
-    //     //   name: 'Buttons',
-    //     //   url: '/elements/buttons',
-    //     // },
-    //     // {
-    //     //   name: 'Grid',
-    //     //   url: '/elements/grid',
-    //     // },
-    //     // {
-    //     //   name: 'Alerts',
-    //     //   url: '/elements/alerts',
-    //     // },
-    //     // {
-    //     //   name: 'Typography',
-    //     //   url: '/elements/typography',
-    //     // },
-    //     // {
-    //     //   name: 'Cards',
-    //     //   url: '/elements/cards',
-    //     // },
-    //     // {
-    //     //   name: 'Tabs',
-    //     //   url: '/elements/tabs',
-    //     // },
-    //     // {
-    //     //   name: 'Tables',
-    //     //   url: '/elements/tables',
-    //     // },
-    //     // {
-    //     //   name: 'Breadcrumbs',
-    //     //   url: '/elements/breadcrumbs',
-    //     // },
-    //     // {
-    //     //   name: 'Forms',
-    //     //   url: '/elements/forms',
-    //     // },
-    //     // {
-    //     //   name: 'Modals',
-    //     //   url: '/elements/modals',
-    //     // },
-    //     // {
-    //     //   name: 'Loaders',
-    //     //   url: '/elements/loaders',
-    //     // },
-    //     // {
-    //     //   name: 'Avatars',
-    //     //   url: '/elements/avatars',
-    //     // },
-    //     // {
-    //     //   name: 'Progress Bars',
-    //     //   url: '/elements/progressbars',
-    //     // },
-    //     // {
-    //     //   name: 'Pagination',
-    //     //   url: '/elements/pagination',
-    //     // },
-    //   ],
-    // },
-    // {
-    //   name: 'Pages',
-    //   icon: 'File',
-    //   children: [
-    //     {
-    //       name: 'Blank',
-    //       url: '/pages/blank',
-    //     },
-    //     {
-    //       name: 'Sub Navigation',
-    //       url: '/pages/subnav',
-    //     },
-    //     {
-    //       name: '404',
-    //       url: '/pages/404',
-    //     },
-    //   ],
-    // },
+   
     {
       name: 'Styleguide',
       icon: 'Cloud',
       children: [
-        // {
-        //   name: 'Analytics',
-        //   url: '/apps/analytics',
-        // },
 
-        {
-          name: 'Starter',
-          url: '/apps/cms'
+
+      {
+          name: 'Markdown Editor',
+          url: '/apps/editor'
         },
-        // {
-        //   name: 'Activity Feed',
-        //   url: '/apps/feed',
-        // },
+      
         {
           name: 'New',
           url: '/apps/cms'
         }
+         
       ]
     },
     {
@@ -113,20 +29,6 @@ export default {
     }
   ],
   bottom: [
-    // {
-    //   name: 'Get Vibe',
-    //   url: 'https://github.com/NiceDash/Vibe',
-    //   icon: 'GitHub',
-    //   external: true,
-    // },
-    // {
-    //   name: 'Account',
-    //   url: '/dashboard',
-    //   icon: 'User',
-    //   badge: {
-    //     variant: 'success',
-    //     text: '3',
-    //   },
-    // },
+
   ]
 }

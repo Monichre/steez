@@ -28,12 +28,11 @@ export default class SidebarNav extends Component {
       }
     };
 
-    const NavBrand = ({ logo, logoText }) => {
+    const NavBrand = ({ logo }) => {
       return (
         <div className="site-logo-bar">
           <NavLink to="/" className="navbar-brand">
             {logo && <img src={logo} alt="" />}
-            {logoText && <span className="logo-text">{logoText}</span>}
           </NavLink>
         </div>
       );
