@@ -1,63 +1,82 @@
-import React, { Component } from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
-import { Button, Badge, NavItem, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
-import { Header, SidebarNav, Footer, PageContent, Avatar, PageAlert, Page } from '../vibe';
-import Logo from '../assets/images/vibe-logo.svg';
-import avatar1 from '../assets/images/avatar1.png';
-import nav from '../_nav';
-import routes from '../views';
-import ContextProviders from '../vibe/components/utilities/ContextProviders';
+import React, { Component } from 'react'
+import { Switch, Route, Redirect } from 'react-router-dom'
+import {
+  Button,
+  Badge,
+  NavItem,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem
+} from 'reactstrap'
+import {
+  Header,
+  SidebarNav,
+  Footer,
+  PageContent,
+  Avatar,
+  PageAlert,
+  Page
+} from '../vibe'
+import Logo from '../images/logo-img-word.png'
+import nav from '../_nav'
+import routes from '../views'
+import ContextProviders from '../vibe/components/utilities/ContextProviders'
 
-const MOBILE_SIZE = 992;
+const MOBILE_SIZE = 992
 
 export default class DashboardLayout extends Component {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
     this.state = {
       sidebarCollapsed: false,
-      isMobile: window.innerWidth <= MOBILE_SIZE,
-    };
+      isMobile: window.innerWidth <= MOBILE_SIZE
+    }
   }
 
   handleResize = () => {
     if (window.innerWidth <= MOBILE_SIZE) {
-      this.setState({ sidebarCollapsed: false, isMobile: true });
+      this.setState({ sidebarCollapsed: false, isMobile: true })
     } else {
-      this.setState({ isMobile: false });
-    }
-  };
-
-  componentDidUpdate(prev) {
-    if (this.state.isMobile && prev.location.pathname !== this.props.location.pathname) {
-      this.toggleSideCollapse();
+      this.setState({ isMobile: false })
     }
   }
 
-  componentDidMount() {
-    window.addEventListener('resize', this.handleResize);
+  componentDidUpdate (prev) {
+    if (
+      this.state.isMobile &&
+      prev.location.pathname !== this.props.location.pathname
+    ) {
+      this.toggleSideCollapse()
+    }
   }
 
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.handleResize);
+  componentDidMount () {
+    window.addEventListener('resize', this.handleResize)
+  }
+
+  componentWillUnmount () {
+    window.removeEventListener('resize', this.handleResize)
   }
 
   toggleSideCollapse = () => {
-    this.setState(prevState => ({ sidebarCollapsed: !prevState.sidebarCollapsed }));
-  };
+    this.setState(prevState => ({
+      sidebarCollapsed: !prevState.sidebarCollapsed
+    }))
+  }
 
-
-  render() {
-    const { sidebarCollapsed } = this.state;
-    const sidebarCollapsedClass = sidebarCollapsed ? 'side-menu-collapsed' : '';
+  render () {
+    const { sidebarCollapsed } = this.state
+    const sidebarCollapsedClass = sidebarCollapsed ? 'side-menu-collapsed' : ''
     return (
       <ContextProviders>
         <div className={`app ${sidebarCollapsedClass}`}>
           <PageAlert />
-          <div className="app-body">
+          <div className='app-body'>
             <SidebarNav
               nav={nav}
               logo={Logo}
-              logoText="VIBE."
+              logoText='Steez.'
               isSidebarCollapsed={sidebarCollapsed}
               toggleSidebar={this.toggleSideCollapse}
               {...this.props}
@@ -74,9 +93,13 @@ export default class DashboardLayout extends Component {
               <PageContent>
                 <Switch>
                   {routes.map((page, key) => (
-                    <Route path={page.path} component={page.component} key={key} />
+                    <Route
+                      path={page.path}
+                      component={page.component}
+                      key={key}
+                    />
                   ))}
-                  <Redirect from="/" to="/home" />
+                  <Redirect from='/' to='/home' />
                 </Switch>
               </PageContent>
             </Page>
@@ -84,11 +107,11 @@ export default class DashboardLayout extends Component {
           <Footer>
             <span>Copyright © 2019 Nice Dash. All rights reserved.</span>
             <span>
-              <a href="#!">Terms</a> | <a href="#!">Privacy Policy</a>
+              <a href='#!'>Terms</a> | <a href='#!'>Privacy Policy</a>
             </span>
-            <span className="ml-auto hidden-xs">
+            <span className='ml-auto hidden-xs'>
               Made with{' '}
-              <span role="img" aria-label="taco">
+              <span role='img' aria-label='taco'>
                 🌮
               </span>
             </span>
@@ -100,11 +123,11 @@ export default class DashboardLayout extends Component {
           </Chat.Container> */}
         </div>
       </ContextProviders>
-    );
+    )
   }
 }
 
-function HeaderNav() {
+function HeaderNav () {
   return (
     <React.Fragment>
       <NavItem>
@@ -125,10 +148,10 @@ function HeaderNav() {
           <DropdownItem divider />
           <DropdownItem>
             Logout
-             {/* <Badge color="primary">10</Badge> */}
+            {/* <Badge color="primary">10</Badge> */}
           </DropdownItem>
         </DropdownMenu>
       </UncontrolledDropdown>
     </React.Fragment>
-  );
+  )
 }

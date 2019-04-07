@@ -15,7 +15,7 @@ class Dashboard extends Component {
         <Row>
           <Col md={6}>
             <div className='home-hero' style={heroStyles}>
-              <h1>This is Steez. Your Styleguide generator</h1>
+              <h1>Steez. Enter Your</h1>
               <p className='text-muted'>
                 Grab your designer. Fill out a form and export your beautiful
                 custom styleguide as a PDF. Oh and grab your favorite dev
