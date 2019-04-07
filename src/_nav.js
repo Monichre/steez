@@ -3,7 +3,7 @@ export default {
     {
       name: 'Home',
       url: '/home',
-      icon: 'Home',
+      icon: 'Home'
     },
     // {
     //   name: 'UI Elements',
@@ -86,38 +86,31 @@ export default {
     //   ],
     // },
     {
-      name: 'App',
+      name: 'Styleguide',
       icon: 'Cloud',
       children: [
         // {
         //   name: 'Analytics',
         //   url: '/apps/analytics',
         // },
+
         {
-          name: 'Exported JSON',
-          url: '/apps/invoice',
+          name: 'Starter',
+          url: '/apps/cms'
         },
         // {
         //   name: 'Activity Feed',
         //   url: '/apps/feed',
         // },
         {
-          name: 'CMS',
-          url: '/apps/cms',
-        },
-      ],
+          name: 'New',
+          url: '/apps/cms'
+        }
+      ]
     },
     {
-      divider: true,
-    },
-    {
-      name: 'Widgets',
-      url: '/widgets',
-      icon: 'Package',
-      badge: {
-        text: 'NEW',
-      },
-    },
+      divider: true
+    }
   ],
   bottom: [
     // {
@@ -135,5 +128,5 @@ export default {
     //     text: '3',
     //   },
     // },
-  ],
-};
+  ]
+}
