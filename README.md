@@ -1,23 +1,22 @@
 <p align="center">
-    <img src="assets/preview.png" width="400" />
+    <img src="assets/logo.png" width="400" />
 </p>
-
-Vibe is a beautiful React.js dashboard build with Bootstrap 4 and
-comes with lots of custom templates and components. It uses Sass
-which allows you to quickly change global colors and styles.
 
 ### Quick Start
 
 - Install dependencies by running `yarn` or `npm install`.
 - Run `yarn start` or `npm run start` to start the local dev server.
 
-### Updating styles
+### GraphQL Resources
 
-Sass files can be found in `./src/vibe/scss`.
-Update `./src/vibe/scss/components/vars.scss` to change global styles.
+**dev**
+[Endpoint](https://cpjvjdgvqvhyppss7d24aywwam.appsync-api.us-east-1.amazonaws.com/graphql)
 
-### Reporting Issues
+### AWS Resources
 
-Report any issues you may find with Vibe on the github
-issues tab. I will get an update to you as soon as possible. Feel free
-to open a pull request and I will review and merge.
+[Analytics](https://us-east-1.console.aws.amazon.com/pinpoint/home/?region=us-east-1#/apps/bdf070e5d60b4d70a89d999d419f7ef5/analytics/overview)
+
+### Login
+
+- user: steez
+- pw: v4UHe6rFDpeXK_i!

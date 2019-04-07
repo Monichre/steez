@@ -1,0 +1,20 @@
+{
+    "appName": "steez",
+    "roleName": "pinpointLambdaRolea0487f28",
+    "cloudWatchPolicyName": "cloudWatchPolicya0487f28",
+    "pinpointPolicyName": "pinpointPolicya0487f28",
+    "authPolicyName": "pinpoint_amplify_a0487f28",
+    "unauthPolicyName": "pinpoint_amplify_a0487f28",
+    "authRoleName": {
+        "Ref": "AuthRoleName"
+    },
+    "unauthRoleName": {
+        "Ref": "UnauthRoleName"
+    },
+    "authRoleArn": {
+        "Fn::GetAtt": [
+            "AuthRole",
+            "Arn"
+        ]
+    }
+}

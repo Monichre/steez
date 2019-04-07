@@ -1,0 +1,64 @@
+type User @model {
+  id: ID!
+  name: String!
+  projects: [Project] @connection(name: "UserProjects")
+}
+type Project @model {
+  id: ID!
+  title: String!
+  styleGuide: StyleGuide
+  componentLibrary: ComponentLibrary
+  user: User @connection(name: "UserProjects")
+}
+type StyleSchema @model {
+  primaryColor1: String
+  primaryColor2: String
+  primaryColor3: String
+  primaryColor4: String
+  primaryColor5: String
+  marginLarge: String
+  marginMedium: String
+  marginSmall: String
+  paddingLarge: String
+  paddingMedium: String
+  paddingSmall: String
+  borderLarge: String
+  borderMedium: String
+  borderSmall: String
+  heading1FontFamily: String
+  heading2FontFamily: String
+  heading3FontFamily: String
+  heading1FontSize: String
+  heading2FontSize: String
+  heading3FontSize: String
+  textColor1: String
+  textColor2: String
+  textColor3: String
+  lineHeightLarge: String
+  lineHeightMedium: String
+  lineHeightSmall: String
+  letterSpacingLarge: String
+  letterSpacingMedium: String
+  letterSpacingSmall: String
+}
+type StyleGuide @model {
+  id: ID!
+  schema: StyleSchema
+  project: Project
+}
+
+type ComponentLibrary @model {
+  id: ID!
+  project: Project
+  styleGuide: StyleGuide
+  components: [Component] @connection(name: "ComponentInComponentLibrary")
+}
+
+type Component @model {
+  id: ID!
+  componentName: String
+  componentAttributes: [String]
+  componentLibrary: ComponentLibrary @connection(name: "ComponentInComponentLibrary")
+  styleGuide: StyleGuide
+  styles: [String]
+}

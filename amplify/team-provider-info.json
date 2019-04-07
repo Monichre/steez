@@ -1,0 +1,19 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "steez-20190407081455-authRole",
+            "UnauthRoleArn": "arn:aws:iam::726906999379:role/steez-20190407081455-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::726906999379:role/steez-20190407081455-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "steez-20190407081455-deployment",
+            "UnauthRoleName": "steez-20190407081455-unauthRole",
+            "StackName": "steez-20190407081455",
+            "StackId": "arn:aws:cloudformation:us-east-1:726906999379:stack/steez-20190407081455/c1853110-592e-11e9-bc78-0a1fbafbd996"
+        },
+        "categories": {
+            "auth": {
+                "cognito5f1e2ed8": {}
+            }
+        }
+    }
+}

@@ -7,6 +7,9 @@
   "copyright": "Copyright 2019 Nice Dash",
   "private": true,
   "dependencies": {
+    "@editorjs/editorjs": "^2.12.4",
+    "aws-amplify": "^1.1.24",
+    "aws-amplify-react": "^2.3.4",
     "bootstrap": "^4.3.1",
     "chart.js": "^2.7.3",
     "classnames": "^2.2.6",

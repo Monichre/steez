@@ -1,0 +1,10 @@
+{
+    "AppSyncApiName": "steez",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "authcognito5f1e2ed8",
+            "Outputs.UserPoolId"
+        ]
+    }
+}
